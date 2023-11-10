@@ -143,3 +143,8 @@ def user_plans():
 # @login_required
 def latexHistory():
    return render_template('latex-history/history.html')
+
+@app.route('/trash')
+@login_required
+def trashPage():
+    return render_template('trash.html', active_tab='trash')
