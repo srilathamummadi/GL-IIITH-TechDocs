@@ -72,8 +72,8 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
   <div class="position-sticky pt-3 sidebar-sticky">
     <ul class="nav flex-column">
-      <li class="nav-item" id="my-documents">
-        <a class="nav-link active" aria-current="page" href="#" id="my-documents" onclick="getfilelist()">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="#" onclick="getfilelist()">
           <i class="bi bi-file-earmark-bar-graph-fill" style="font-size: 16px; padding-right: 5px;"></i>
           My Documents
         </a>
@@ -90,12 +90,12 @@
           Archived
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" id="trashed" href="#" onclick="trashlist()">
-          <i class="bi bi-trash3-fill" style="font-size: 16px; padding-right: 5px;"></i>
-          Trash
+      <li class="nav-item {% if active_tab == 'trash' %}active{% endif %}" id="trashed">
+        <a class="nav-link" href="{{ url_for('trashPage') }}">
+            <i class="bi bi-trash3-fill" style="font-size: 16px; padding-right: 5px;"></i>
+            Trash
         </a>
-      </li>
+    </li>
     </ul>
   </div>
 </nav>
